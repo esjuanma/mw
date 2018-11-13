@@ -26,13 +26,6 @@
 		HeroParallax();
 	});
 
-	var Timer = function() {
-		var timer = 0;
-		return function(time) {
-			if(!isNaN(time)) timer += time;
-			return timer;
-		}
-	};
 
 	/*--------------------------------------------------
 	Function Firs tLoad
@@ -289,7 +282,8 @@
 			onScroll = function (event) {
 				didScroll = true;
 	
-				var blackHeaderShow = $window.scrollTop() >= 400;
+				var blackHeaderShow = $window.scrollTop() > 100;
+				
 				$header.toggleClass('black-header', blackHeaderShow);
 				$closeButton.toggleClass('black-header', blackHeaderShow);
 			};
@@ -329,7 +323,7 @@
 				if (scrollTop < 0) {
 					scrollTop = 0;
 				}
-
+				
 				if (Math.abs(lastScrollTop - scrollTop) <= 5 && scrollTop > 5) {
 					return;
 				}
@@ -348,176 +342,7 @@
 		}
 	}()) // End Show Hide Header
 
-	function projectNext() {
-		var $projectNext = $('#project_next');
 
-		///Init scripts here
-		if (!$projectNext.length) return;
-		
-		// Since mobile changes the height when URL bar is hidden, we need to use screen.height
-		$projectNext.css('height', (
-			window.innerWidth < 1024
-				? window.screen.height // for mobile
-				: window.innerHeight // for desktop / tablet
-		) + "px");
-
-		$(".project-link").on({
-			mouseenter: function () {
-				$projectNext.addClass("hover");
-			},
-			mouseleave: function () {
-				$projectNext.removeClass("hover");
-			}
-		});
-
-		$("#project_close").on({
-			mouseenter: function () {
-				$('#menu').addClass("hover");
-			},
-			mouseleave: function () {
-				$('#menu').removeClass("hover");
-			}
-		});
-	}
-
-	function projectLinkClick () {
-		var timer = new Timer();
-
-		$('#menu').addClass('hidden');
-		$('#progressBar').addClass('active');
-		$.fn.fullpage.setAllowScrolling(false);
-
-		var openProject = $(this).find('.open-project');
-		var myUrl = (openProject.data('first') || openProject.attr('href')) + " .item-data";
-
-		$('.disable-section').addClass('active');
-
-		setTimeout(function () {
-			$('#loader-line-box').addClass('is-open');
-		}, timer(200));
-	
-		setTimeout(function () {
-			$("#project-page-data").load(myUrl, function (e) {
-				$('#project-page-holder').waitForImages({
-					finished: finished,
-					waitForAll: true
-				});
-			});
-		}, timer(300));
-
-		var finished = function () {
-			var timer = new Timer();
-			projectNext();
-			ClassicSlider();
-			Shortcodes();
-			MagnificPopup();
-
-			setTimeout(function () {
-				$('#project-page-data').addClass('is-open');
-			}, timer(500));
-
-			setTimeout(function () {
-				$('#loader-line-box').removeClass('is-open');
-				$('#fp-nav').addClass('hidden');
-				$('.section-info').addClass('hidden');
-				$('#showcase-nav').addClass('hidden');
-				$('.share-button').addClass('hidden');
-				$('#showcase-slider').removeClass('delay');
-			}, timer(300));
-
-			setTimeout(function () {
-				$('#project-page-holder, #project-page-data').height($('.project-page').height());
-			}, timer(200));
-
-			setTimeout(function () {
-				$("#project_close").removeClass("hide");
-			}, timer(200));
-			
-			setTimeout(function () {
-				$('html, body').animate({ scrollTop: 400 }, 800);
-				$('#project_next').footerReveal({ shadow: false, zIndex: 0 });
-				ProgressBar();
-				ShowHideHeader();
-			}, timer(600));
-		};
-
-		return false;
-	}
-
-	function projectCloseClick () {
-		var $header = $('header');
-		var $closeButton = $('#project_close');
-		$header.removeClass('nav-down nav-up-temp').addClass('nav-up');
-		$closeButton.removeClass('nav-down').removeClass('nav-up-temp').addClass('nav-up');
-		
-		$('#showcase-slider').removeClass('expanded');
-		$('html, body').animate({ scrollTop: 0 }, 800);
-		$.fn.fullpage.setAllowScrolling(true);
-		$('#menu').removeClass('hover');
-		$('.section-info').removeClass('hidden');
-		
-		setTimeout(function () {
-			$('.hamburger').removeClass('hidden');
-		}, 500);
-		
-		setTimeout(function () {
-			$("#project_close").addClass("hide");
-			$('#menu').removeClass('hidden');
-			$('#fp-nav').removeClass('hidden');
-			$('#showcase-nav').removeClass('hidden');
-			$('.share-button').removeClass('hidden');
-			$('#showcase-slider').addClass('delay');
-		}, 1000);
-
-		setTimeout(function () {
-			$('.blog-right').removeClass('active');
-		}, 1300);
-
-		setTimeout(function () {
-			$('#project-page-data').removeClass('is-open');
-			$('#project-page-holder, #project-page-data').height('0');
-			$(".project-page").remove();
-		}, 1100);
-
-		setTimeout(function () {
-			$('.blog-left').removeClass('inactive');
-			$('.disable-section').removeClass('active');
-			ProjectExpander.cleanProjectEvents();
-		}, 1550);
-
-		return false;
-	}
-
-	function projectGeneralLinkClick () {
-		$('#showcase-slider').addClass('expanded');
-		
-		if(presentationSlide && $('.fp-section.active').is(':last-child')) {
-			$.fn.fullpage.moveTo(2);
-		} else {
-			$.fn.fullpage.moveSectionDown();
-		}
-		
-		$("#project_next").addClass("disabled");
-		$('#progressBar').removeClass('active');
-		$(".next-project-footer").addClass("disabled");
-		$('html, body').animate({ scrollTop: $("#nav-anchor").offset().top }, 200);
-		$("#project_close").removeClass("hide");
-		
-		setTimeout(function () {
-			$('header').addClass('nav-up-temp');
-			$('#project_close').addClass('nav-up-temp');
-		}, 220);
-		
-		setTimeout(function () {
-			$('html, body').animate({ scrollTop: 0 }, 0);
-		}, 300);
-		
-		setTimeout(function () {
-			$('#showcase-slider .section.active a.open-project').trigger('click');
-		}, 600);
-
-		return false;
-	}
 
 	/*--------------------------------------------------
 	Function Project Expander
@@ -525,9 +350,162 @@
 
 	function ProjectExpander() {
 
-		$('#showcase-slider .section .open-project-link').on('click', projectLinkClick);
-		$(document).on('click', '#project_close', projectCloseClick);
-		$(document).on('click', '.project-link', projectGeneralLinkClick);
+		$('#showcase-slider .section .open-project-link').on('click', function () {
+
+			$('#menu').addClass('hidden');
+			$('#progressBar').addClass('active');
+			$.fn.fullpage.setAllowScrolling(false);
+
+			var myUrl = $(this).find('.open-project').attr("href") + " .item-data";
+
+			$('.disable-section').addClass('active');
+
+			setTimeout(function () {
+				$('#loader-line-box').addClass('is-open');
+			}, (200));
+		
+			setTimeout(function () {
+				$("#project-page-data").load(myUrl, function (e) {
+
+					$('#project-page-holder').waitForImages({
+						finished: function () {
+							var $projectNext = $('#project_next');
+
+							///Init scripts here
+							if ($projectNext.length) {
+								// Since mobile changes the height when URL bar is hidden,
+								// we need to use screen.height
+								$projectNext.css('height', (
+									window.innerWidth < 1024
+										? window.screen.height // for mobile
+										: window.innerHeight // for desktop / tablet
+								) + "px");
+
+								$(".project-link").on({
+									mouseenter: function () {
+										$projectNext.addClass("hover");
+									},
+									mouseleave: function () {
+										$projectNext.removeClass("hover");
+									}
+								});
+
+								$("#project_close").on({
+									mouseenter: function () {
+										$('#menu').addClass("hover");
+									},
+									mouseleave: function () {
+										$('#menu').removeClass("hover");
+									}
+								});
+							}
+
+							ClassicSlider();
+							Shortcodes();
+							MagnificPopup();
+
+							setTimeout(function () {
+
+								$('#project-page-data').addClass('is-open');
+								
+								setTimeout(function () {
+									$('#project-page-holder, #project-page-data').height($('.project-page').height());
+								}, (500));
+
+								setTimeout(function () {
+									$('#loader-line-box').removeClass('is-open');
+									$('#fp-nav').addClass('hidden');
+									$('.section-info').addClass('hidden');
+									$('#showcase-nav').addClass('hidden');
+									$('.share-button').addClass('hidden');
+									$('#showcase-slider').removeClass('delay');
+									
+									setTimeout(function () {
+										$("#project_close").removeClass("hide");
+									}, (400));
+									
+									setTimeout(function () {
+										$('html, body').animate({ scrollTop: 400 }, 800);
+										$('#project_next').footerReveal({ shadow: false, zIndex: 0 });
+										ProgressBar();
+										ShowHideHeader();
+									}, (1000));
+								}, (300));
+
+							}, (500));
+						},
+						waitForAll: true
+					});
+
+				});
+
+			}, (500));
+
+			return false;
+
+		});
+
+		$(document).on('click', '#project_close', function (event) {
+			$('#showcase-slider').removeClass('expanded');
+			$('html, body').animate({ scrollTop: 0 }, 800);
+			$.fn.fullpage.setAllowScrolling(true);
+			$('#menu').removeClass('hover');
+			$('.section-info').removeClass('hidden');
+			
+			setTimeout(function () {
+				$('.hamburger').removeClass('hidden');
+			}, (500));
+			
+			setTimeout(function () {
+				$("#project_close").addClass("hide");
+				$('#menu').removeClass('hidden');
+				$('#fp-nav').removeClass('hidden');
+				$('#showcase-nav').removeClass('hidden');
+				$('.share-button').removeClass('hidden');
+				$('#showcase-slider').addClass('delay');
+
+				$(".project-page").remove();
+				$('#project-page-data').removeClass('is-open');
+				$('#project-page-holder, #project-page-data').height('0');
+			}, 1100);
+			
+			setTimeout(function () {
+				$('.blog-right').removeClass('active');
+			}, 1300);
+
+			setTimeout(function () {
+				$('.blog-left').removeClass('inactive');
+				$('.disable-section').removeClass('active');
+
+				// Last thing
+				ProjectExpander.cleanProjectEvents();
+			}, 1550);
+
+			return false;
+		});
+
+		$(document).on('click', '.project-link', function (event) {
+			$('#showcase-slider').addClass('expanded');
+
+			if(presentationSlide && $('.fp-section.active').is(':last-child')) {
+				$.fn.fullpage.moveTo(2);
+			} else {
+				$.fn.fullpage.moveSectionDown();
+			}
+			
+			$("#project_next").addClass("disabled");
+			$('#progressBar').removeClass('active');
+			$(".next-project-footer").addClass("disabled");
+			setTimeout(function () {
+				$('header').addClass('nav-up-temp');
+				$('#project_close').addClass('nav-up-temp');
+			}, (220));
+			$('html, body').animate({ scrollTop: $("#nav-anchor").offset().top }, 200);
+			setTimeout(function () { $('html, body').animate({ scrollTop: 0 }, 0); }, (300));
+			$("#project_close").removeClass("hide");
+			setTimeout(function () { $('#showcase-slider .section.active a.open-project').trigger('click'); }, (600));
+			return false;
+		});
 
 	} // End Project Expander
 

@@ -1290,13 +1290,23 @@
 	}	
 	
 	#showcase-slider {
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 1s!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990);
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		z-index:1;
 	}
 	
 	#showcase-slider.expanded, #showcase-slider.expanded .img-container, #showcase-slider.expanded .section-image, #showcase-slider.expanded .gradient {
+		-webkit-transition: all 0s ease-in-out 0s!important;
+		-moz-transition: all 0s ease-in-out 0s!important;
+		-o-transition: all 0s ease-in-out 0s!important;
+		-ms-transition: all 0s ease-in-out 0s!important;
 		transition: all 0s ease-in-out 0s!important;
 	}
 	
@@ -1323,21 +1333,43 @@
 		-ms-transform: scale(0.6);
 		transform: scale(0.6);
 		overflow:hidden;
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
 	.section.active .img-container {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
 		transform: scale(1);
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)1s!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 1s!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 1s!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 1s!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
 	.delay .section.active .img-container {
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
@@ -1349,12 +1381,25 @@
 		margin:0;
 		padding:0;
 		position:absolute;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 		background-size: cover;
 		background-position:center center;
 		background-repeat:no-repeat;
+		-webkit-transform: scale(1.3);
+		-moz-transform: scale(1.3);
+		-o-transform: scale(1.3);
+		-ms-transform: scale(1.3);
 		transform: scale(1.3);
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
@@ -1364,8 +1409,14 @@
 		-o-transform: scale(1);
 		-ms-transform: scale(1);
 		transform: scale(1);
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
@@ -1392,16 +1443,31 @@
 		opacity:0;
 		bottom:-1px;
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
 		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
 	.section.active .gradient {
 		opacity:0.7;
+		-webkit-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-moz-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
+		-o-transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		transition: all 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990) 2s!important;
 		/* custom */
+		-webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
+		-o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 		transition-timing-function: cubic-bezier(0.550, 0.085, 0.000, 0.990)!important;
 	}
 	
@@ -1456,6 +1522,10 @@
 		font-weight:300;
 		left:0;
 		opacity:0;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
 		transition: all 0.3s ease-in-out;
 	}
 	
@@ -1466,16 +1536,27 @@
 		-o-transform: translateX(-50px);
 		-ms-transform: translateX(-50px);
 		transform: translateX(-50px);
+		-webkit-transition: all 0.2s ease-in-out 0.2s;
+		-moz-transition: all 0.2s ease-in-out 0.2s;
+		-o-transition: all 0.2s ease-in-out 0.2s;
 		transition: all 0.2s ease-in-out 0.2s;
 	}
 	
 	.section.active .section-info {
 		opacity:1;
+		-webkit-transition: all 0.6s ease-in-out 1s;
+		-moz-transition: all 0.6s ease-in-out 1s;
+		-o-transition: all 0.6s ease-in-out 1s;
+		-ms-transition: all 0.6s ease-in-out 1s;
 		transition: all 0.6s ease-in-out 1s;
 	}
 	
 	.delay .section.active .section-info {
 		opacity:1;
+		-webkit-transition: all 0.6s ease-in-out 2.45s;
+		-moz-transition: all 0.6s ease-in-out 2.45s;
+		-o-transition: all 0.6s ease-in-out 2.45s;
+		-ms-transition: all 0.6s ease-in-out 2.45s;
 		transition: all 0.6s ease-in-out 2.45s;
 	}
 	
@@ -1925,7 +2006,13 @@
 		-ms-transform: translateX(60px);
 		transform: translateX(60px);
 		opacity:0;
+		-webkit-transition: all 150ms cubic-bezier(0.000, 0.730, 0.585, 0.995);
+		-moz-transition: all 150ms cubic-bezier(0.000, 0.730, 0.585, 0.995);
+		-o-transition: all 150ms cubic-bezier(0.000, 0.730, 0.585, 0.995);
 		transition: all 150ms cubic-bezier(0.000, 0.730, 0.585, 0.995);		
+		-webkit-transition-timing-function: cubic-bezier(0.000, 0.730, 0.585, 0.995);
+		-moz-transition-timing-function: cubic-bezier(0.000, 0.730, 0.585, 0.995);
+		-o-transition-timing-function: cubic-bezier(0.000, 0.730, 0.585, 0.995);
 		transition-timing-function: cubic-bezier(0.000, 0.730, 0.585, 0.995);
 	}
 		
@@ -1934,6 +2021,9 @@
 		width:100%;
 		height:auto;
 		transition:opacity 0.3s ease 0s;
+		-moz-transition:opacity 0.3s ease 0s;
+    	-webkit-transition:opacity 0.3s ease 0s;
+    	-o-transition:opacity 0.3s ease 0s;
 	}
 	
 	.project-content {
@@ -1954,6 +2044,10 @@
 		position:absolute;
 		box-sizing:border-box;
 		background-color: rgba(0, 0, 0, 0.75);
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
 	}
 	
@@ -3175,11 +3269,10 @@
 	}	
 }	
 
-/*
+
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
     
 	#rotate-device {
 		display:block;
 	}
 }
-*/

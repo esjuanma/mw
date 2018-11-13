@@ -58,10 +58,6 @@
     .row_little_padding_top {
         padding-top: 55px;
     }
-
-    .one_half p {
-        width: 60%;
-    }
 }
 
 @media screen and (max-width: 767px) {
@@ -108,10 +104,6 @@
     }
 
     .about-content .one_half {
-        width: 100%;
-    }
-
-    .one_half p {
         width: 100%;
     }
 }
