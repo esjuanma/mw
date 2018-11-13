@@ -1,0 +1,117 @@
+#jpreLoader {
+	display: none;
+}
+
+/* Home vertical lines */
+#hero .bg-line.left {
+    margin-left: calc(-30% + 1px);
+}
+#hero .bg-line.right {
+    margin-left: 30%;
+}
+
+/* Project  vertical lines */
+.project-content .bg-line.left {
+    margin-left: -526px;
+}
+.project-content .bg-line.right {
+    margin-left: 527px;
+}
+
+/* About center vertical line */
+#about-us .bg-line.center {
+    margin-left: -4px;
+}
+
+/* Just for big desktop */
+@media only screen and (min-width: 1467px) {
+    /* Fix side vertical lines on project content */
+    
+    /* Project  vertical lines */
+    .project-content .bg-line.left {
+        margin-left: -604px;
+    }
+    .project-content .bg-line.right {
+        margin-left: 605px;
+    }
+}
+
+/* Mobile, tablet and desktop small */
+@media screen and (max-width: 1024px) {
+    /* Don´t show right and left vertical lines */
+    .bg-line.right, .bg-line.left {
+        display: none;
+    }
+    
+    .about-content .one_half {
+        width: 50%;
+    }
+
+    #about-us .one_half {
+        margin: 0;
+    }
+
+    .row_little_padding_bottom {
+        padding-bottom: 0;
+    }
+
+    .row_little_padding_top {
+        padding-top: 55px;
+    }
+
+    .one_half p {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #project_close {
+        right: 23px;
+    }
+}
+
+/* Mobile/tablet */
+@media screen and (max-width: 719px) {
+    /* Removes white padding at the end of content */
+    .row_padding_bottom_internal {
+        /* display: none; */
+    }
+
+    .row_padding_top {
+        padding-top: 75px;
+    }
+    
+    /* Fixes footer; puts content on rows, not columns */
+    .next-project-footer .next,
+    .next-project-footer .copyright {
+        float: none;
+    }
+    
+    /* Fixes footer background position */
+    #project_next {
+        background-position: right;
+    }
+}
+
+
+/* Mobile adj */
+@media only screen and (max-width: 479px) {
+    /* Fix header */
+    #project_close.black-header {
+        margin-top: 0;
+    }
+    
+    /* Fix loader */
+    #loader-line-box {
+        top: 37px;
+        right: 35px;
+    }
+
+    .about-content .one_half {
+        width: 100%;
+    }
+
+    .one_half p {
+        width: 100%;
+    }
+}
